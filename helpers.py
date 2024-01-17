@@ -13,6 +13,12 @@ class FormularioJogo(FlaskForm):
     salvar = SubmitField('Salvar')
 
 
+class FormularioUsuario(FlaskForm):
+    nickname = StringField('Login do usuário', [validators.DataRequired(), validators.length(min=2, max=50)])
+    senha = StringField('Senha do jogo', [validators.DataRequired(), validators.length(min=2, max=50)])
+    login = SubmitField()
+
+
 def recupera_imagem(id):
     for nome_arquivo in os.listdir(app.config['UPLOAD_PATH']):
         if f'capa{id}' in nome_arquivo:
