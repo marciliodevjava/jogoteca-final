@@ -34,4 +34,4 @@ def autenticar():
 def logout():
     session['usuario_logado'] = None
     flash('Logout efetuado com sucesso!')
-    return redirect(url_for('index'))
+    return redirect(url_for('login'))
