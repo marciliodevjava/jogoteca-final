@@ -14,8 +14,8 @@ class FormularioJogo(FlaskForm):
 
 
 class FormularioUsuario(FlaskForm):
-    nickname = StringField('Login do usuário', [validators.DataRequired(), validators.length(min=2, max=50)])
-    senha = StringField('Senha do jogo', [validators.DataRequired(), validators.length(min=2, max=50)])
+    nickname = StringField('Login do usuário', [validators.DataRequired(), validators.length(min=2, max=8)])
+    senha = StringField('Senha do jogo', [validators.DataRequired(), validators.length(min=2, max=100)])
     login = SubmitField()
 
 
