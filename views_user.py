@@ -1,4 +1,5 @@
 from flask import render_template, request, redirect, session, flash, url_for
+from flask_bcrypt import check_password_hash
 
 from helpers import FormularioUsuario
 from jogoteca import app
@@ -16,8 +17,9 @@ def login():
 def autenticar():
     form = FormularioUsuario(request.form)
     usuario = Usuarios.query.filter_by(nickname=form.nickname.data).first()
+    senha = check_password_hash(usuario.senha, form.senha.data)
     if usuario:
-        if form.senha.data == usuario.senha:
+        if senha:
             session['usuario_logado'] = usuario.nickname
             flash(usuario.nickname + ' logado com sucesso!')
             proxima_pagina = request.form['proxima']
