@@ -13,6 +13,7 @@
         </figure>
 
         <fieldset>
+            {{ form.csrf_token() }}
             <div class="form-group">
                 {{ form.nome.label(class="form-label") }}
                 {{ form.nome(class="form-control") }}
@@ -21,8 +22,12 @@
                 {{ form.categoria.label(class="form-label") }}
                 {{ form.categoria(class="form-control") }}
             </div>
+            <div class="form-group">
+                {{ form.console.label(class="form-label") }}
+                {{ form.console(class="form-control") }}
+            </div>
             <div>
-                {{ form.salvar(class="bnt-primary") }}
+                {{ form.salvar(class="bnt bnt-primary") }}
             </div>
         </fieldset>
         <a class="btn btn-danger" href="{{ url_for('logout') }}">logout</a>
