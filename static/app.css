@@ -53,12 +53,20 @@ td {
     margin-right: 16px
 }
 
+.formularioImagemNovo {
+    margin-right: 10px
+}
+
 .buttons {
     margin-top: 16px
 }
 
 .inputBox {
-    width: 700px;
+    width: 350px;
+}
+
+.inputBoxNovo {
+    width: 450px;
 }
 
 .inputsJogo {
